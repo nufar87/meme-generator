@@ -1,0 +1,94 @@
+/* meme-editor */
+
+.meme-editor {
+    z-index: 1;
+    width: 90%; 
+    height: 90%;
+    display: none;
+}
+
+.main-controllers {
+    opacity: 1;
+    height: 100px;
+    width:445px;
+    margin:auto;
+}
+
+.share-download{
+    justify-content: center;
+}
+
+.controllers button {
+    height: 56px;
+    width: 56px;
+    border: none;
+    background: none;
+}
+
+.controllers .main-edit{
+    background: #19A59F 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    margin-inline-end: 24px;
+    width: 445px;
+    margin: auto;
+    margin-block-end: 10px;
+    justify-content: center;
+    padding-top: 7px;
+}
+input {
+    display: block;
+    width: 445px;
+    height: 2.25em; 
+    border-radius: 28px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input::placeholder {
+    font-family: impact;
+}
+
+input[type=text] {
+    font-family: impact;
+    font-size: 1.56rem;
+}
+.hidden {
+    visibility: hidden;
+}
+
+@media (max-width: 1800px) {
+
+.meme-editor{
+    margin: auto 95px;
+}
+.canvas-container {
+    width: 476px;
+    height: 546px;
+    margin-right: 97px;
+    background: #EBEEF3 0% 0% no-repeat padding-box;
+    box-shadow: 0.26px 5px 0px #BBC4D1;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.controllers {
+    width: 525px;
+    height: 546px;
+    margin-inline-start: 90px;
+    padding-top: 25px;
+    background: #EBEEF3 0% 0% no-repeat padding-box;
+    box-shadow: 0.26px 5px 0px #BBC4D1;
+    border-radius: 30px;
+    /* opacity: 0.11; */
+    overflow: hidden;
+}
+}
+
+@media (max-width: 450px) {
+    .meme-editor {
+        justify-content: center;
+        margin: 8px auto 5px auto;
+    }
+}

@@ -1,0 +1,97 @@
+/* #meme gallery# */
+
+.grid {
+    display: grid;
+}
+
+.grid-container {
+    overflow-y: scroll;
+    height: 600px;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: #22252C 0% 0% no-repeat padding-box;  
+  border-radius: 7px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+  background: transparent linear-gradient(274deg, #33BE6D 0%, #0C98B9 100%) 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0C98B9; 
+  }
+
+
+
+.grid-container img{
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,07);  
+}
+
+.grid-container img:hover {
+    cursor: pointer;
+}
+
+.gallery-container {
+    margin: auto;
+    max-width: 1240px;
+    background-color: #383B42;
+    border-radius: 10px;
+}
+
+@media (max-width: 1800px) {
+    .gallery-container > * {
+        max-width: 1500px;
+    }
+    .grid-container {
+     max-width: 1170px;
+    }
+
+    .grid-gallery {
+        max-width: 1170px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(5, 200px);
+        grid-template-rows: repeat(4, 173px);
+       gap: 26px 30px;
+    }
+
+    .gallery-container {
+        max-width: 1240px;
+        height: 700px;
+        margin: auto;
+        padding: 27px 50px;
+        padding-inline-start: 57px;
+    }
+
+    .grid-container img {
+        height: 173px;
+        width: 200px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .grid {
+        grid-template-columns: repeat(2, 163px);
+        grid-template-rows: repeat(9, 163px);
+        grid-gap: 4px;
+    }
+
+    .gallery-container {
+        padding: 18px 10px;
+    }
+
+}

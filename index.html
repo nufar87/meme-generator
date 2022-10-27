@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme generator</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/meme.editor.css">
+    <link rel="stylesheet" href="css/meme.gallery.css">
+</head>
+
+<body onload="onInit()">
+    <header>
+        <div class="header-elements flex space-between">
+            <img class="logo"src="img/LOGO/LOGO.png" alt="">
+            <nav id="mainMenu" class="main-nav">
+                <ul class="clean-list flex space-between show-menu">
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <button class="toggle-menu-btn" onclick="toggleMenu()">☰</button>
+                <div class="toggle-menu-screen" onclick="toggleMenu()"></div>
+            </nav>
+        </div>
+    </header>
+<!-- meme editor -->
+    <section class="meme-editor wrap">
+        <div class="canvas-container">
+            <canvas></canvas>
+        </div>
+        <div class="controllers">
+            <div class="main-controllers flex space-between">
+                <input oninput="onAddText(this.value)" placeholder="type something.." type="text" name="line">
+                <button onclick="OnSwitchLines()"><img
+                        src="icons/line-nav2.png"></button>
+                <button onclick="onRemoveLine()"><img src="icons/delete.png"></button>
+            </div>
+            <div class="main-edit">
+                <div>
+                    <button onclick="onChangeFontSize(false)"><img src="icons/text-smaller.png"></button>
+                    <button onclick="onChangeFontSize(true)"><img src="icons/text-bigger.png"></button>
+                    <button onclick="onAlignText('left')"><img src="icons/align-to-left.png"></button>
+                    <button onclick="onAlignText('center')"><img src="icons/align-to-center.png"></button>
+                    <button onclick="onAlignText('right')"><img src="icons/align-to-right.png"></button>
+                </div>
+                <div>
+                    <button onclick="onColorPicker(true)"><img src="icons/stroke-color.png"></button>
+                    <button onclick="onColorPicker(false)"><img src="icons/paint-brush.png"></button>
+                    <input onchange="onColorChange(this)" class="hidden" type="color">
+                </div>
+            </div>
+            <div class="share-download felx nowrap">
+                <a class="download" href="#" onclick="onDownloadMeme(this)" download="my-img.jpg"><img src="icons/Download.png" alt=""></a>
+                <a class="share" href="#" onclick="onShareMeme(this)" share=""><img src="icons/share.png" alt=""></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+<!-- gallery -->
+    <section class="gallery-container">
+        <div class="grid-container">
+            <div class="grid grid-gallery"></div>
+        </div>
+    </section>
+ 
+
+   
+    <footer>
+        <h5>Meme Generator</h5>
+        <p>by Nufar Maimon</p>
+    </footer>
+
+    <script src="js/storage.service.js"></script>
+    <script src="js/meme.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
+</body>
+</html>
