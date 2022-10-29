@@ -2,6 +2,12 @@
 
 .grid {
     display: grid;
+    /* grid-template-columns: repeat(5, 200px); */
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    /* grid-template-rows: repeat(4, 173px); */
+    /* grid-template-rows: repeat(4, 173px); */
+   /* gap: 26px 30px; */
+   gap: 1.625rem 1.875rem;
 }
 
 .grid-container {
@@ -10,29 +16,23 @@
 }
 
 /* scrollbar */
-/* width */
-::-webkit-scrollbar {
+.grid-container::-webkit-scrollbar {
     width: 13px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-  background: #22252C 0% 0% no-repeat padding-box;  
-  border-radius: 7px;
-  }
+.grid-container::-webkit-scrollbar-track {
+background: #22252C 0% 0% no-repeat padding-box;  
+border-radius: 7px;
+}
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-  background: transparent linear-gradient(274deg, #33BE6D 0%, #0C98B9 100%) 0% 0% no-repeat padding-box;
-    border-radius: 7px;
-  }
+.grid-container::-webkit-scrollbar-thumb {
+background: transparent linear-gradient(274deg, #33BE6D 0%, #0C98B9 100%) 0% 0% no-repeat padding-box;
+border-radius: 7px;
+}
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #0C98B9; 
-  }
-
-
+.grid-container::-webkit-scrollbar-thumb:hover {
+background: #0C98B9; 
+}
 
 .grid-container img{
     object-fit: cover;
@@ -52,22 +52,14 @@
 
 @media (max-width: 1800px) {
     .gallery-container > * {
-        max-width: 1500px;
+        max-width: 1240px;
     }
     .grid-container {
      max-width: 1170px;
     }
-
     .grid-gallery {
         max-width: 1170px;
     }
-
-    .grid {
-        grid-template-columns: repeat(5, 200px);
-        grid-template-rows: repeat(4, 173px);
-       gap: 26px 30px;
-    }
-
     .gallery-container {
         max-width: 1240px;
         height: 700px;
@@ -75,7 +67,6 @@
         padding: 27px 50px;
         padding-inline-start: 57px;
     }
-
     .grid-container img {
         height: 173px;
         width: 200px;
@@ -83,15 +74,21 @@
     }
 }
 
-@media (max-width: 450px) {
-    .grid {
-        grid-template-columns: repeat(2, 163px);
-        grid-template-rows: repeat(9, 163px);
-        grid-gap: 4px;
-    }
+@media (max-width: 480px) {
 
     .gallery-container {
         padding: 18px 10px;
     }
-
+    .grid-container {
+        height: 660px;
+    }
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+        gap: 0.8125rem 0.9375rem;
+    }
+    .grid-container img {
+        height: 121px;
+        width: 140px;
+        border-radius: 10px;
+    }
 }

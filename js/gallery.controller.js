@@ -1,10 +1,6 @@
 'use strict';
 var gImgs;
 
-function onInit() {
-  renderGallery();
-}
-
 function renderGallery() {
   gImgs = getImgs();
   let strHTML = gImgs

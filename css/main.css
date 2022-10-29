@@ -16,6 +16,20 @@
     src: url(/fonts/poppins/Poppins-Medium.ttf);
 }
 
+@font-face {
+    font-family: rampart-one;
+    src: url(/fonts/rampart-one/RampartOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: lemon-regular;
+    src: url(/fonts/lemon/Lemon-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Bowlby One SC';
+    src: url(/fonts/BowlbyOneSC/BowlbyOneSC-Regular.ttf);
+}
 
 /* BASICS */
 * {
@@ -28,7 +42,6 @@ body {
     font-family: impact;
     background: transparent linear-gradient(148deg, #F64F8B 0%, #F88558 100%) 0% 0% no-repeat padding-box;
 }
-
 
 button {
     cursor: pointer;
@@ -70,7 +83,6 @@ a {
 /* COMPONENTS */
 
 /* header */
-/* nav */
 header {
     background: transparent linear-gradient(274deg, #33BE6D 0%, #0C98B9 100%) 0% 0% no-repeat padding-box;    
     align-items: center;
@@ -79,16 +91,14 @@ header {
 
 .header-elements {
     align-items: center;
-    max-width: 1200px;
+    max-width: 1150px;
 }
+
 .logo {
    height: 30px;
    margin-inline-start: 80px;
 }
 
-nav {
-
-}
 nav ul li {
     color: #ffffff;
     display: flex;
@@ -113,7 +123,6 @@ a {
     background-size: 5.5em 1.9em;
     padding: 0.2em 1em;
     border-radius: 20px;
-   
 }
 
 a:active {
@@ -151,10 +160,6 @@ footer {
 }
 
 @media (max-width: 1800px) {
-    header h1 {
-        margin-left: 49px;
-    }
-
     .main-nav ul li {
         font-size: 1.1875;
         height: 66px;
@@ -174,19 +179,30 @@ footer {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 850px) {
+    header .logo {
+        margin-inline-start: 20px;
+    }
+    .header-elements {
+        align-items: center;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-elements {
+        max-width: 400px;
+        height: 50px;
+    }
     .main-nav {
         max-width: 350px;
         align-items: center;
         justify-content: space-between;
     }
-
-    header h1 {
-        margin-left: 10px;
-    }
-    
+   
     .toggle-menu-btn {
         display: block;
+        margin-inline-end: 10px;
     } 
 
     .main-nav {

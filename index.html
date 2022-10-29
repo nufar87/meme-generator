@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meme generator</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/meme.editor.css">
     <link rel="stylesheet" href="css/meme.gallery.css">
@@ -16,7 +17,7 @@
             <img class="logo"src="img/LOGO/LOGO.png" alt="">
             <nav id="mainMenu" class="main-nav">
                 <ul class="clean-list flex space-between show-menu">
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href=".">Gallery</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
                 <button class="toggle-menu-btn" onclick="toggleMenu()">☰</button>
@@ -25,34 +26,57 @@
         </div>
     </header>
 <!-- meme editor -->
-    <section class="meme-editor wrap">
+    <section class="meme-editor flex wrap">
         <div class="canvas-container">
             <canvas></canvas>
         </div>
         <div class="controllers">
-            <div class="main-controllers flex space-between">
-                <input oninput="onAddText(this.value)" placeholder="type something.." type="text" name="line">
-                <button onclick="OnSwitchLines()"><img
-                        src="icons/line-nav2.png"></button>
-                <button onclick="onRemoveLine()"><img src="icons/delete.png"></button>
+            <div class="main-controllers flex wrap space-between">
+                <input oninput="onAddText(this.value)" placeholder="Type Something.." type="text" name="line">
+                    <button onclick="onSwitchLines()"><img src="icons/line-nav2.png"></button>
+                    <button onclick="onAddLine()"><img src="icons/add.png" alt=""></button>
+                    <button onclick="onRemoveLine()"><img src="icons/delete.png"></button>
             </div>
             <div class="main-edit">
                 <div>
-                    <button onclick="onChangeFontSize(false)"><img src="icons/text-smaller.png"></button>
-                    <button onclick="onChangeFontSize(true)"><img src="icons/text-bigger.png"></button>
+                    <button onclick="onChangeFontSize(-10)"><img src="icons/text-smaller.png"></button>
+                    <button onclick="onChangeFontSize(10)"><img src="icons/text-bigger.png"></button>
                     <button onclick="onAlignText('left')"><img src="icons/align-to-left.png"></button>
                     <button onclick="onAlignText('center')"><img src="icons/align-to-center.png"></button>
                     <button onclick="onAlignText('right')"><img src="icons/align-to-right.png"></button>
                 </div>
-                <div>
+                <div class="font-edit flex">
+                        <select name="fontFamily" onchange="onChangeFontFamily(this.value)" style="font-family: Impact;">
+                            <option value="impact" style="font-family: Impact;">Impact</option>
+                            <option value="Bowlby One SC" style="font-family: 'Bowlby One SC';">Bowlby One SC</option>
+                            <option value="lemon-regular" style="font-family: lemon-regular;">lemon-regular</option>
+                            <option value="cursive" style="font-family: cursive;">Cursive</option>
+                            <option value="rampart-one" style="font-family: rampart-one;">Rampart One</option>
+                        </select>
                     <button onclick="onColorPicker(true)"><img src="icons/stroke-color.png"></button>
                     <button onclick="onColorPicker(false)"><img src="icons/paint-brush.png"></button>
                     <input onchange="onColorChange(this)" class="hidden" type="color">
                 </div>
+            </div> 
+            <div class="emojis">
+                <span id ="&#128525;" onclick="onAddEmoji(this.id)">&#128525;</span>
+                <span id="&#128526;" onclick="onAddEmoji(this.id)">&#128526;</span>
+                <span id="&#128520;" onclick="onAddEmoji(this.id)">&#128520;</span>
+                <span id="&#128557;" onclick="onAddEmoji(this.id)">&#128557;</span>
+                <span id="&#128519;" onclick="onAddEmoji(this.id)">&#128519;</span>
+                <span id="&#129312;" onclick="onAddEmoji(this.id)">&#129312;</span>
+                <span id="&#127881;" onclick="onAddEmoji(this.id)">&#127881;</span>
+                <span id="&#127800;" onclick="onAddEmoji(this.id)">&#127800;</span>
+                <span id="&#10084;" onclick="onAddEmoji(this.id)">&#10084;</span>
+                <span id="&#128293;" onclick="onAddEmoji(this.id)">&#128293;</span>
+                <span id="&#128570;" onclick="onAddEmoji(this.id)">&#128570;</span>
+                <span id="&#127850;" onclick="onAddEmoji(this.id)">&#127850;</span>
+                <span id="&#11088;" onclick="onAddEmoji(this.id)">&#11088;</span>
             </div>
+                
             <div class="share-download felx nowrap">
-                <a class="download" href="#" onclick="onDownloadMeme(this)" download="my-img.jpg"><img src="icons/Download.png" alt=""></a>
-                <a class="share" href="#" onclick="onShareMeme(this)" share=""><img src="icons/share.png" alt=""></a>
+                <a class="download" href="#" onclick="drawMemeForSave();onDownloadMeme(this)" download="my-img.jpg"><img src="icons/Download.png" alt=""></a>
+                <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"><img src="icons/share.png" alt=""></a>
             </div>
         </div>
         </div>
@@ -68,8 +92,7 @@
 
    
     <footer>
-        <h5>Meme Generator</h5>
-        <p>by Nufar Maimon</p>
+        <p>Meme Generator &#169;Nufar Maimon</p>
     </footer>
 
     <script src="js/storage.service.js"></script>
