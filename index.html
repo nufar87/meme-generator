@@ -33,28 +33,28 @@
         <div class="controllers">
             <div class="main-controllers flex wrap">
                 <input oninput="onAddText(this.value)" placeholder="Type Something.." type="text" name="line">
-                    <a class="btn switch" onclick="onSwitchLines()"><img src="icons/switch-line.svg"></a>
-                    <a class="btn add" onclick="onAddLine()"><img src="icons/add.png" alt=""></a>
-                    <a class="btn delete" onclick="onRemoveLine()"><img src="icons/delete.svg"></a>
+                    <a class="btn switch" title="switch line" onclick="onSwitchLines()"><img src="icons/switch-line.svg"></a>
+                    <a class="btn add" title="add text line" onclick="onAddLine()"><img src="icons/add.png" alt=""></a>
+                    <a class="btn delete" title="delete text" onclick="onRemoveLine()"><img src="icons/delete.svg"></a>
             </div>
             <div class="main-edit wrap flex">
                 <div class="alignment flex">
-                    <a class="btn" onclick="onChangeFontSize(-10)"><img src="icons/decrease-font.svg"></a>
-                    <a class="btn" onclick="onChangeFontSize(10)"><img src="icons/increase-font.svg"></a>
-                    <a class="btn" onclick="onAlignText('left')"><img src="icons/align-left.svg"></a>
-                    <a class="btn" onclick="onAlignText('center')"><img src="icons/align-center.svg"></a>
-                    <a class="btn" onclick="onAlignText('right')"><img src="icons/align-right.svg"></a>
+                    <a class="btn" title="decrease font size" onclick="onChangeFontSize(-10)"><img src="icons/decrease-font.svg"></a>
+                    <a class="btn" title="increase font size" onclick="onChangeFontSize(10)"><img src="icons/increase-font.svg"></a>
+                    <a class="btn" title="align left" onclick="onAlignText('left')"><img src="icons/align-left.svg"></a>
+                    <a class="btn" title="align center" onclick="onAlignText('center')"><img src="icons/align-center.svg"></a>
+                    <a class="btn" title="align rigth" onclick="onAlignText('right')"><img src="icons/align-right.svg"></a>
                 </div>
                 <div class="font-edit flex wrap">
-                        <select name="fontFamily" onchange="onChangeFontFamily(this.value)" style="font-family: Impact;">
+                        <select name="fontFamily" title="change font style" onchange="onChangeFontFamily(this.value)" style="font-family: Impact;">
                             <option value="impact" style="font-family: Impact;">Impact</option>
                             <option value="Bowlby One SC" style="font-family: 'Bowlby One SC';">Bowlby One SC</option>
                             <option value="lemon-regular" style="font-family: lemon-regular;">lemon-regular</option>
                             <option value="cursive" style="font-family: cursive;">Cursive</option>
                             <option value="rampart-one" style="font-family: rampart-one;">Rampart One</option>
                         </select>
-                    <a class="btn" onclick="onColorPicker(true)"><img src="icons/stroke-color.svg"></a>
-                    <a class="btn" onclick="onColorPicker(false)"><img src="icons/color.svg"></a>
+                    <a class="btn" title="change stroke color" onclick="onColorPicker(true)"><img src="icons/stroke-color.svg"></a>
+                    <a class="btn" title="change font color" onclick="onColorPicker(false)"><img src="icons/color.svg"></a>
                     <input onchange="onColorChange(this)" class="hidden" type="color">
                 </div>
             </div> 
@@ -70,8 +70,8 @@
             </div>
                 
             <div class="share-download felx nowrap">
-                <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"><img src="icons/share.svg" alt=""></a>
-                <a class="download" href="#" onclick="drawMemeForSave();onDownloadMeme(this)" download="my-img.jpg"><img src="icons/Download.svg" alt=""></a>
+                <a class="share" title="share on FB" href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"><img src="icons/share.svg" alt=""></a>
+                <a class="download" title="download img" href="#" onclick="drawMemeForSave();onDownloadMeme(this)" download="my-img.jpg"><img src="icons/Download.svg" alt=""></a>
             </div>
         </div>
         </div>
