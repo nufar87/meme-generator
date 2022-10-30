@@ -2,22 +2,34 @@
 
 .meme-editor {
     z-index: 1;
-    width: 90%; 
-    height: 90%;
     display: none;
-}
-
-.share-download{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: transparent linear-gradient(148deg, #0f1013 0%, #22252c 100%) 0% 0% no-repeat padding-box;
+    align-items: center;
+    margin: auto;
     justify-content: center;
 }
 
-.controllers button {
-    height: 56px;
-    width: 56px;
-    border: none;
-    background: none;
+.canvas-container {
+    width: 476px;
+    height: 546px;
+    background: #EBEEF3 0% 0% no-repeat padding-box;
+    box-shadow: 0.26px 5px 0px #BBC4D1;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
+.controllers {
+    width: 476px;
+    height: 546px;
+    margin-inline-start: 90px;
+    padding-top: 25px;
+    background: #EBEEF3 0% 0% no-repeat padding-box;
+    box-shadow: 0.26px 5px 0px #BBC4D1;
+    border-radius: 30px;
+    overflow: hidden;
+}
 .controllers .main-controllers {
     opacity: 1;
     height: 140px;
@@ -27,7 +39,7 @@
 
 .controllers .emojis {
     height: 90px;
-    width: 445px;
+    width: 430px;
     border-radius: 45px;
     background: transparent linear-gradient(322deg, #8076FD 0%, #A08BFF 100%) 0% 0% no-repeat padding-box;
     margin: auto;
@@ -35,7 +47,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: scroll;
 }
 
 .controllers .emojis span {
@@ -44,32 +55,106 @@
     vertical-align: middle;
     line-height: 2;
 }
+
+.controllers .main-controllers {
+    align-items: center;
+    justify-content: space-evenly;
+}
 .controllers .main-edit{
     background: #19A59F 0% 0% no-repeat padding-box;
     border-radius: 15px;
     margin-inline-end: 24px;
     height: 150px;
-    width: 445px;
+    width: 430px;
     margin: auto;
     margin-block-end: 25px;
     justify-content: center;
     padding-top: 7px;
 }
+.alignment {
+    height: 70px
+}
 
+.font-edit {
+    padding-block-end: 10px;
+    width: 100%;
+   justify-content: center;
+}
+.controllers a.btn {
+    border-radius: 10px;
+    height: 56px;
+    width: 56px;
+    cursor: pointer;
+    margin: 10px 0.5rem;
+    display: flex;
+   justify-content: center; 
+}
+
+.controllers .main-controllers .delete {
+    background-color: #d82b37;
+}
+
+.controllers .main-controllers .add {
+    background-color: #40e159;
+}
+
+.controllers .main-controllers .switch {
+    background-color: #4cb7d2;
+}
+
+.controllers .main-edit a.btn {
+    background-color: #ffffff;
+}
+.controllers a.btn img {
+    align-self:center;
+}
+
+
+.controllers .share-download{
+    display: flex;
+    align-self: center;
+    justify-content: center; 
+    width: 430px;
+    align-items: center;
+    margin: auto;
+    
+}
+
+.controllers a.share, a.download {
+    height: 56px;
+    width: 160px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controllers a.share {
+    background-color: #1e7cd3;
+    margin-inline-end: 60px;
+}
+
+.controllers a.download {
+    background-color:#8f44bb;
+   
+}
+
+.share-download a img{
+    height: 26px;
+    width: 29.5px;
+} 
 select {
     width: 150px;
     height: 50px;
     font-size: 40px;
     border-radius: 10px;
+    display: flex;
+    align-self: center;
 }
 
-.font-edit {
-    justify-content: center;
-    align-items: center;
-}
 input {
     display: block;
-    width: 445px;
+    width: 430px;
     height: 2.25em; 
     border-radius: 28px;
     padding: 0.5em;
@@ -91,113 +176,31 @@ input[type=text] {
     visibility: hidden;
 }
 
-.meme-editor{
-    margin: auto 95px;
-    justify-content: center;
-}
-.canvas-container {
-    width: 476px;
-    height: 546px;
-    background: #EBEEF3 0% 0% no-repeat padding-box;
-    box-shadow: 0.26px 5px 0px #BBC4D1;
-    border-radius: 30px;
-    overflow: hidden;
+@media (max-width: 1050px) {
+    .controllers {
+        margin-inline-start: 40px;
+    }
 }
 
-.controllers {
-    width: 525px;
-    height: 546px;
-    margin-inline-start: 90px;
-    padding-top: 25px;
-    background: #EBEEF3 0% 0% no-repeat padding-box;
-    box-shadow: 0.26px 5px 0px #BBC4D1;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-
-/* #75% from origin # */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .meme-editor {
-        margin: auto; 
-    }
-    .canvas-container {
-        width: 357px;
-        height: 410px;
-    }
-    .controllers {
-        width: 394px;
-        height: 410px;
-        margin-inline-start: 65px;
-    }
-
-    .controllers button {
-        height: 42px;
-        width: 42px;
-        margin: 0;
-    }
-    .controllers button img {
-        height: 42px;
-        width: 42px;
-    }
-
-    select {
-        width: 150px;
-        height: 40px;
-        font-size: 30px; 
-    }
-    .controllers .main-controllers {
-        opacity: 1;
-        height: 110px;
-        width:334px;
-        margin:auto;
-    }
-  
-    .controllers .main-edit{
-        background: #19A59F 0% 0% no-repeat padding-box;
-        border-radius: 15px;
-        margin-inline-end: 18px;
-        width: 334px;
-        height: 110px;
-        margin: auto;
-        margin-block-end: 18px;
-        justify-content: center;
-        padding-top: 6px;
-    }
-
-    .controllers .emojis {
-        height: 70px;
-        width: 334px;
-        margin-block-end:15px;
-    }
-
-    .share-download a img{
-        height: 40px;
-        width: 149px;
+        padding-inline-start: 10px;
+        padding-inline-end: 10px;
     }
 }
 
-@media (max-width: 950px) {
-    .controllers {
-        margin-inline-start: 10px;
+@media (max-width: 900px) {
+    .meme-editor {
+        flex-direction: column;
+        flex-wrap: wrap;
     }
-}
-
-
-/* #touch screen layout# */
-@media (max-width: 850px) {
     .canvas-container {
-        width: 476px;
-        height: 546px;
+        margin-block-start: 50px; 
     }
     .controllers {
-        width:476px;
-        height: 400px;
-        margin-block-start: 20px;
         margin-inline-start: 0px;
-    }
-    .meme-editor {
-        height: 80%;
+        margin-block-start: 50px;
+        margin-block-end: 50px;
     }
 }
 
@@ -205,35 +208,56 @@ input[type=text] {
     .meme-editor {
         justify-content: center;
     }
+
     .canvas-container {
         width: 333px;
         height: 382px;
     }
+
     .controllers {
         width: 333px;
-        height: 400px;
+        height: 430px;
         margin-block-start: 20px;
-        margin-inline-start: 0px;
+        padding-block-start: 10px;
     }
 
     .controllers .main-controllers {
         width:300px;
+        height: 120px;
+    }
+
+    .controllers a.btn {
+        height: 48px;
+        width: 48px;
+        margin: 3px 0.2rem;
     }
 
     .controllers .main-edit{
-        margin-inline-end: 18px;
         width: 300px;
         margin-block-end: 10px;
+        margin-block-start: 5px;
+        height: 124px;
     }
-
+    .alignment {
+        height: 55px;
+    }
     .controllers .emojis {
         height: 80px;
         width: 300px;
         margin-block-end:10px;
     }
+    .controllers .share-download{
+        width: 300px;
+    }
+    .controllers a.share, a.download {
+        height: 56px;
+        width: 110px;
+    }
+    .controllers a.share {
+        margin-inline-end: 20px;
+    }
 
-    .share-download a img{
-        height: 32px;
-        width: 119px;
+    .controllers .emojis span {
+        font-size: 33px;
     }
 }

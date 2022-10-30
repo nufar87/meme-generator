@@ -99,6 +99,7 @@ function resizeCanvas() {
 function onOpenMemeEditor(id) {
   document.querySelector('.meme-editor').style.display = 'flex';
   document.querySelector('.gallery-container').style.display = 'none';
+  document.querySelector('footer').style.display = 'none';
   resizeCanvas();
   setMaxHeigth(gElCanvas.height);
   //step 1: define the current gMeme
@@ -114,7 +115,6 @@ function drawMeme() {
   img.src = meme.selectedImgurl;
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-    console.log(gCanShare);
     meme.lines.forEach((line, idx) => {
       if (meme.selectedLineIdx === idx) {
         gCtx.strokeRect(0, line.y - line.size, gElCanvas.width, line.size);
@@ -189,7 +189,7 @@ function onColorChange(elColor) {
   drawMeme();
 }
 
-function onDownloadMeme() {
+function onDownloadMeme(elLink) {
   const imgContent = gElCanvas.toDataURL('image/jpeg');
   elLink.href = imgContent;
 }

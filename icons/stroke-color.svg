@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="35" viewBox="0 0 20 35">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 51.636px;
+        fill: #22252c;
+        font-family: Poppins;
+        font-weight: 600;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <text id="s" class="cls-1" transform="translate(0.111 22.569) scale(0.621)">s</text>
+</svg>
